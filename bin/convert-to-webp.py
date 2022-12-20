@@ -1,0 +1,1 @@
+../src/convert_to_webp/bin/convert-to-webp.py
