@@ -754,5 +754,8 @@
     ],
     "Lua.workspace.userThirdParty": [
         "/Users/marximus/Library/Application Support/Code/User/workspaceStorage/95c3a0581c3f374ae5bbb29a38b87c32/justarandomgeek.factoriomod-debug/sumneko-3rd"
-    ]
+    ],
+    "python-envs.defaultEnvManager": "ms-python.python:conda",
+    "python-envs.defaultPackageManager": "ms-python.python:conda",
+    "python-envs.pythonProjects": []
 }
