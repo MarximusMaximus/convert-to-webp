@@ -52,6 +52,7 @@ from typing import (
 #region third party
 
 from PIL.Image import (
+    new                             as PIL_Image_new,
     open                            as PIL_Image_open,
 )
 
@@ -97,8 +98,31 @@ def convertToWebp(
         )
         no_ext_filepath, _ = os_path_splitext(x)
         out_filepath = f"{no_ext_filepath}.webp"
-        img = PIL_Image_open(x).convert("RGB")
-        img.save(out_filepath, "WEBP")
+
+        img = PIL_Image_open(x)
+
+        new_frames: list[Any] = []
+
+        if hasattr(img, "n_frames"):
+            for frame_index in range(img.n_frames):
+                img.seek(frame_index)
+                new_frame = PIL_Image_new("RGBA", img.size)
+                converted_frame = img.convert("RGBA")
+                new_frame.paste(converted_frame)
+                new_frames.append(new_frame)
+        else:
+            new_frame = PIL_Image_new("RGBA", img.size)
+            converted_frame = img.convert("RGBA")
+            new_frame.paste(converted_frame)
+            new_frames.append(new_frame)
+
+        kwargs = {}
+        if hasattr(img, "n_frames") and img.n_frames > 1:
+            kwargs["append_images"] = new_frames[1:]
+        if "duration" in img.info:
+            kwargs["duration"] = img.info["duration"]
+
+        new_frames[0].save(out_filepath,  "WEBP", save_all=True, **kwargs)
 
     return 0
 
