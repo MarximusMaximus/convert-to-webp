@@ -54,7 +54,7 @@ include = [
 # similarly, we need to specify a valid version of python
 [tool.poetry.dependencies]
 poetry = ">1"  # conda controls poetry version
-pyOpenSSL = ">1"  # conda congtrol pyOpenSSL version
+pyOpenSSL = ">1"  # conda control pyOpenSSL version
 PySocks = ">1"  # conda control PySocks version
 pip = ">1"  # prevents poetry from removing it
 setuptools = ">1"  # prevents poetry from removing it
