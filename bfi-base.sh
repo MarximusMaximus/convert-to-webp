@@ -2766,7 +2766,7 @@ if [ $ret -ne 0 ]; then
     RET_ERROR_SIGHUP=129 ; export RET_ERROR_SIGHUP  #  SIGHUP  1
     RET_ERROR_SIGINT=130 ; export RET_ERROR_SIGINT  #  SIGINT  2
     RET_ERROR_SIGQUIT=131; export RET_ERROR_SIGQUIT #  SIGQUIT 3
-    RET_ERROR_SIGILL=132 ; export RET_ERROR_SIGILL  #  SIGILL  4
+    RET_ERROR_SIGKILL=132; export RET_ERROR_SIGKILL #  SIGKILL 4
     RET_ERROR_SIGTRAP=133; export RET_ERROR_SIGTRAP #  SIGTRAP 5
     RET_ERROR_SIGABRT=134; export RET_ERROR_SIGABRT #  SIGABRT 6
     RET_ERROR_SIG135=135 ; export RET_ERROR_SIG135  #  Uncommon, might be SIGBUS (linux) or SIGEMT (macOS)
@@ -3489,7 +3489,7 @@ if [ $ret -ne 0 ]; then
             command printf '%s ' "$@" | sed "s/'/'\\\\''/g"
         }
 
-        # run the subprocess outputingg to the fifos
+        # run the subprocess outputting to the fifos
         eval "$(esceval "$@")" > "${_stdout_fifo}" 2> "${_stderr_fifo}"
         teetty_ret=$?
 
@@ -4203,7 +4203,7 @@ export SHELL_SESSION_FILE
     fi
     exit $ret
 
-    #endregion Immedate
+    #endregion Immediate
     ############################################################################
 )
 ret=$?

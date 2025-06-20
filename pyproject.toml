@@ -421,7 +421,7 @@ class-rgx = "[^\\W\\da-z][^\\W]+$"
 const-naming-style = "UPPER_CASE"
 
 # Naming style matching correct function names.
-# function-naming-style = "camelCase" but allow underscoes
+# function-naming-style = "camelCase" but allow underscores
 function-rgx = "([^\\W\\dA-Z].{2,}|__[^\\W\\dA-Z].+__)$"
 
 # Good variable names which should always be accepted, separated by a comma.

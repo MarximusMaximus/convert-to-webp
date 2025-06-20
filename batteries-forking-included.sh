@@ -92,7 +92,7 @@ Global Flags:
     -d, --dev, --developer
                         install as developer (include development dependencies)
                         default: false
-    +d, --no-dev, --no-develeoper
+    +d, --no-dev, --no-developer
                         do not install as developer
     -D, --deploy, --deployment
                         install as a deployment
@@ -3676,7 +3676,7 @@ def; check_tools__require_extractable_X() {
 }
 
 #-------------------------------------------------------------------------------
-def; check_tools__require_clonable_X() {
+def; check_tools__require_cloneable_X() {
     if \
         [ "${git_exists}" = false ] &&
         [ "${curl_exists}" = false ] &&
@@ -3703,7 +3703,7 @@ def; check_tools__require_downloadable_X() {
 }
 
 #-------------------------------------------------------------------------------
-def; check_tools__require_comparible_X() {
+def; check_tools__require_comparable_X() {
     if \
         [ "${diff_exists}" = false ] &&
         [ "${md5_exists}" = false ]
@@ -4415,7 +4415,7 @@ def; is_file_same() {
 
         call log_debug "Comparing '%s' and '%s'" "${left_file}" "${right_file}"
 
-        call check_tools__require_comparible_X
+        call check_tools__require_comparable_X
 
         if [ "${diff_exists}" = true ]; then
             diff "${left_file}" "${right_file}" >/dev/null
@@ -4444,7 +4444,7 @@ def; is_file_same() {
             fi
         else  # pragma: no branch
             # NOTE: it /shouldn't/ be possible to get here
-            call log_fatal "no way to comapre files (no diff, no md5)"
+            call log_fatal "no way to compare files (no diff, no md5)"
             exit "${RET_ERROR_TOOL_MISSING}"
         fi
 
@@ -4547,7 +4547,7 @@ def; compare_and_update_files() {
     (
         call log_header "Comparing template files to current project's files..."
 
-        call check_tools__require_comparible_X
+        call check_tools__require_comparable_X
 
         needs_rerun=false
 
@@ -4583,7 +4583,7 @@ def; compare_and_update_files() {
             call rerun_update_X "$@"
         fi
 
-        # special handling for post-boostrap.sh b/c users edit that file
+        # special handling for post-bootstrap.sh b/c users edit that file
 
         # split first part of template post-bootstrap.sh (BFI FIRST PART)
         awk '{print; if (match($0,"    \# WARNING: DO NOT EDIT ABOVE THIS LINE")) exit}' "${my_tempdir}"/template/post-bootstrap.sh >"${my_tempdir}"/template/post-bootstrap.sh-part1
@@ -4607,14 +4607,14 @@ def; compare_and_update_files() {
             call log_fatal "Could not create %s" "${my_tempdir}"/template/post-bootstrap.sh-part3
             exit "${RET_ERROR_FILE_COULD_NOT_BE_ACCESSED}"
         fi
-        # delete original template post-boostrap.sh
+        # delete original template post-bootstrap.sh
         call safe_rm "${my_tempdir}"/template/post-bootstrap.sh
         ret=$?
         if [ "$(call return_code_is_error $ret)" = true ]; then
             exit $ret
         fi
 
-        # recombine three parts into new template post-boostrap.sh
+        # recombine three parts into new template post-bootstrap.sh
         cat "${my_tempdir}"/template/post-bootstrap.sh-part1 \
             "${my_tempdir}"/template/post-bootstrap.sh-part2 \
             "${my_tempdir}"/template/post-bootstrap.sh-part3 \

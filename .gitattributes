@@ -234,7 +234,7 @@ zshrc               text eol=lf
 *.dbproj            text eol=crlf merge=union
 # Datafile
 *.df                text
-# Copmiled Dynamic Library
+# Compiled Dynamic Library
 *.dll               binary
 # Document
 *.doc               diff=astextplain
@@ -514,7 +514,7 @@ zshrc               text eol=lf
 *.pbxproj           binary -merge=union
 # Precompiled Headers
 *.pch               binary
-# Copmiled Dynamic Library
+# Compiled Dynamic Library
 *.pdb               binary
 # Document
 *.pdf               binary
