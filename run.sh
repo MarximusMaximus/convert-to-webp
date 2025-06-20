@@ -2822,7 +2822,7 @@ call ensure_include_GXY "$(get_my_real_dir_fullpath)/bfi-base.sh"
                             fi
                         fi
                         shebang=$(head -n 1 "${TEMP_RUN_EXEC}")
-                        if [ "$(echo "${TEMP_RUN_EXEC}" | grep ".py" )" != "" ]; then
+                        if [ "$(echo "${TEMP_RUN_EXEC}" | grep "\.py" )" != "" ]; then
                             # NOTE: we are doing this so that .py scripts that use an
                             #   alternative #! such as #!bash to run a shell script preamble
                             #   work properly
