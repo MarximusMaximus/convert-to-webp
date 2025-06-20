@@ -2778,25 +2778,26 @@ if [ $ret -ne 0 ]; then
     RET_ERROR_SIGPIPE=141; export RET_ERROR_SIGPIPE #  SIGPIPE 13
     RET_ERROR_SIGALRM=142; export RET_ERROR_SIGALRM #  SIGALRM 14
     RET_ERROR_SIGTERM=143; export RET_ERROR_SIGTERM #  SIGTERM 15
-    # Signals above 16 are less commonly seen,
+    # Signals above 15 are less commonly seen,
     # listed here for informational purposes:
     # Linux:            macOS:
-    # SIGCHLD   17      SIGURG    16
-    # SIGCONT   18      SIGSTOP   17
-    # SIGSTOP   19      SIGTSTP   18
-    # SIGTSTP   20      SIGCONT   19
-    # SIGTTIN   21      SIGCHLD   20
-    # SIGTTOU   22      SIGTTIN   21
-    # SIGURG    23      SIGTTOU   22
-    # SIGXCPU   24      SIGIO     23
-    # SIGXFSZ   25      SIGXCPU   24
-    # SIGVTALRM 26      SIGXFSZ   25
-    # SIGPROF   27      SIGVTALRM 26
-    # SIGWINCH  28      SIGPROF   27
-    # SIGIO     29      SIGWINCH  28
-    # SIGPWR    30      SIGINFO   29
-    # SIGSYS    31      SIGUSR1   30
-    # SIGRTMIN  34      SIGUSR2   31
+    #                   SIGURG    16
+    # SIGCHLD   17      SIGSTOP   17
+    # SIGCONT   18      SIGTSTP   18
+    # SIGSTOP   19      SIGCONT   19
+    # SIGTSTP   20      SIGCHLD   20
+    # SIGTTIN   21      SIGTTIN   21
+    # SIGTTOU   22      SIGTTOU   22
+    # SIGURG    23      SIGIO     23
+    # SIGXCPU   24      SIGXCPU   24
+    # SIGXFSZ   25      SIGXFSZ   25
+    # SIGVTALRM 26      SIGVTALRM 26
+    # SIGPROF   27      SIGPROF   27
+    # SIGWINCH  28      SIGWINCH  28
+    # SIGIO     29      SIGINFO   29
+    # SIGPWR    30      SIGUSR1   30
+    # SIGSYS    31      SIGUSR2   31
+    # SIGRTMIN  34
     RET_ERROR_CONDA_ACTIVATE_FAILED=144; export RET_ERROR_CONDA_ACTIVATE_FAILED
     RET_ERROR_CONDA_INSTALL_FAILED=145; export RET_ERROR_CONDA_INSTALL_FAILED
     RET_ERROR_PIP_INSTALL_FAILED=146; export RET_ERROR_PIP_INSTALL_FAILED
