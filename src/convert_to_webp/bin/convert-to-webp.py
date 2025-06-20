@@ -1,11 +1,13 @@
 #!/usr/bin/env sh
 # pylint: disable=invalid-name
+# shellcheck disable=SC1072
 
 ################################################################################
 #region Bootstrap Preamble
-# 'multiline shebang' that will run this script in the proper environment
+# NOTE: 'multiline shebang' that will run this script in the proper environment
 # see: https://rosettacode.org/wiki/Multiline_shebang#Python
 # spellchecker: disable
+# shellcheck disable=SC1003
 "true" '''\'
 
 #===============================================================================
@@ -101,8 +103,8 @@ export BFI_ORIGINAL_EXEC_NAME
 
 "${run_dir_fullpath}"/run.sh "$0" "$@"
 exit $?
+# shellcheck disable=SC1073,SC1009
 '''  # noqa: D300,W605,E501,B950
-
 # spellchecker: enable
 
 # insert our repo base dir into the sys.path so that we can import our library
