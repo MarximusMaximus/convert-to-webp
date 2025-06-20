@@ -228,6 +228,7 @@ repos:
   # - repo: https://github.com/JohnnyMorganz/StyLua
   #   rev: "v0.13.1"
   #   hooks:
+  #     ## cspell:disable-next-line
   #     - id: stylua # or stylua-system / stylua-github
   ## alternative? https://github.com/Koihik/LuaFormatter
 

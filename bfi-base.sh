@@ -3029,10 +3029,10 @@ if [ $ret -ne 0 ]; then
 
         LINUX_BASE_FLAVOR="UNKNOWN_LINUX"
         DEFAULT_ADMIN_GROUP="wheel"
-        if [ "$(echo "${LINUX_BASE_FLAVOR_VERSION}" | grep "[dD]ebian" )" != "" ]; then
+        if [ "$(echo "${LINUX_BASE_FLAVOR_VERSION}" | grep "[dD]ebian" )" != "" ]; then  ## cspell:disable-line
             LINUX_BASE_FLAVOR="Debian"
             DEFAULT_ADMIN_GROUP="sudo";
-        elif [ "$(echo "${LINUX_BASE_FLAVOR_VERSION}" | grep "[uU]buntu" )" != "" ]; then
+        elif [ "$(echo "${LINUX_BASE_FLAVOR_VERSION}" | grep "[uU]buntu" )" != "" ]; then  ## cspell:disable-line
             LINUX_BASE_FLAVOR="Ubuntu"
             # version of command with leading cat is easier to read
             # shellcheck disable=SC2002

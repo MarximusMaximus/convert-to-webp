@@ -655,6 +655,7 @@ zshrc               text eol=lf
 # 3D Models
 *.stl               binary
 # CSS
+## cspell:disable-next-line
 *.styl              text
 # Template File
 *.svelte            text
@@ -673,6 +674,7 @@ zshrc               text eol=lf
 # XML
 *.tag               text
 # XML
+## cspell:disable-next-line
 *.tagx              text
 # Compressed Files
 *.tar               binary
