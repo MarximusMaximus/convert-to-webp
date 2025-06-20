@@ -2,7 +2,7 @@
 
 by Marximus Maximus (<https://teammerryshark.com>)
 
-Converts images / animated images (with transparency) to webp.
+Converts static and animated images (with transparency) to webp.
 
 ## Like My Work & Want To Support It?
 
