@@ -11,7 +11,7 @@
         {
             "label": "View Coverage HTML",
             "type": "Live Preview",
-            "args": [],
+            // "args": [],
             "problemMatcher": [],
         },
         {
