@@ -408,7 +408,7 @@ jobs:
 
       - name: Create Release
         id: create-release
-        uses: ncipollo/release-action@v1.11.2
+        uses: ncipollo/release-action@v1.16.0
         with:
           commit: ${{ github.sha }}
           artifacts: "dist/*"
